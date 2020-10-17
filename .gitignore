@@ -31,3 +31,10 @@ node_modules
 .idea
 *.iml
 /out
+
+# no important info pushed to github
+variable.tf
+
+# terraform stuff
+terraform.tfstate
+.terraform
