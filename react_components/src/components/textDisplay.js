@@ -17,6 +17,7 @@ class TextDisplay extends React.Component {
         return (
             <div>
                 {this.displayTitle(sentences)}
+                <br />
                 {this.displayText(sentences)}
             </div>
         );
@@ -24,14 +25,14 @@ class TextDisplay extends React.Component {
 }
 
 TextDisplay.propTypes = {
-    isWorkTime: PropTypes.string.isRequired,
+    isWorkTime: PropTypes.bool.isRequired,
 };
 
 // todo: update placeholder text
 TextDisplay.sentences = {
-    restTimeBody: "Placeholder text for rest",
+    restTimeBody: "Time to rest. Get up and stretch, get some water/refill you drink and do whatever you need to do. You're working hard.",
     restTimeTitle: "It's rest time!",
-    workTimeBody: "Placeholder text for work",
+    workTimeBody: "Back to work you go! Take care of yourself! You're doing a great job.",
     workTimeTitle: "It's work time!",
 };
 
