@@ -46,6 +46,7 @@ class TimeHandler extends React.Component {
     componentDidMount() {
         // update component every second
         this.interval = setInterval(() => this.tick(), 1000);
+        console.log(this.interval);
     }
 
     componentWillUnmount() {
