@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 // components
 import Timer from './timer';
+import TextDisplay from './textDisplay';
 
 class TimeHandler extends React.Component {
     constructor(props) {
@@ -57,6 +58,7 @@ class TimeHandler extends React.Component {
                 <Timer
                     seconds={this.state.currentTimeInSeconds}
                 />
+                <TextDisplay isWorkTime={this.state.isWorkTime}/>
                 <Button
                     variant="primary"
                     onClick={(e) => this.toggleTimerPause(e)} // e = click event
