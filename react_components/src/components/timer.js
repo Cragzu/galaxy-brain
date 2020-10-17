@@ -49,11 +49,13 @@ class Timer extends React.Component {
 
 Timer.propTypes = {
     startTimeInSeconds: PropTypes.number,
+    timerIsFinished: PropTypes.bool,
     timerIsPaused: PropTypes.bool,
 };
 
 Timer.defaultProps = {
-    startTimeInSeconds: 60,
+    // startTimeInSeconds: 60,
+    timerIsFinished: false,
     timerIsPaused: false,
 };
 

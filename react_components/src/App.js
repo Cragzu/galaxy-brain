@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import Timer from './timer';
+import TimeHandler from "./components/timeHandler";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Timer
-                    startTimeInSeconds={120}
-                    timerIsPaused={false}
-                />
+                <TimeHandler/>
             </header>
         </div>
     );
