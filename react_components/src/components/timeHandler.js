@@ -1,46 +1,44 @@
+// external dependencies
 import React from 'react';
-import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+
+// components
 import Timer from './timer';
 
 class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            startTimeInSeconds: 120,
+            timerIsFinished: false,
             timerIsPaused: false,
         };
     }
 
-    toggleTimerPause () {
+    toggleTimerPause() {
         this.setState({
-            timerIsPaused: (!this.state.timerIsPaused)
+            timerIsPaused: (!this.state.timerIsPaused),
         });
         console.log("timer set to " + this.state.timerIsPaused);
     }
 
-    render () {
+    render() {
         return (
             <div>
-                <button
-                    onClick={(e) => this.toggleTimerPause(e)}
-                />
                 <Timer
-                    startTimeInSeconds={120}
+                    startTimeInSeconds={this.state.startTimeInSeconds}
                     timerIsPaused={this.state.timerIsPaused}
                 />
+                <Button
+                    variant="primary"
+                    onClick={(e) => this.toggleTimerPause(e)} // e = click event
+                >
+                    {this.state.timerIsPaused ? "Play" : "Pause"}
+                </Button>
             </div>
 
         )
     }
 }
-
-TimeHandler.propTypes = {
-    startTimeInSeconds: PropTypes.number,
-    timerIsFinished: PropTypes.bool,
-};
-
-TimeHandler.defaultProps = {
-    startTimeInSeconds: 60,
-    timerIsFinished: false,
-};
 
 export default TimeHandler;
