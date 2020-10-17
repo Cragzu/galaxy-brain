@@ -10,7 +10,7 @@ phases:
         - wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.23.40/terragrunt_linux_amd64
         - mv terragrunt_linux_amd64 /bin/terragrunt
         - chmod +x /bin/terragrunt
-  prebuild:
+  pre_build:
     commands:
         - cd react_components
         - npm install -g serverless 
