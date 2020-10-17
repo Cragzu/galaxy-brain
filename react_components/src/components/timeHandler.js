@@ -9,7 +9,7 @@ class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTimeInSeconds: 10,
+            currentTimeInSeconds: 30,
             startTimeInSeconds: 10,
             timerIsFinished: false,
             timerIsPaused: false,
@@ -23,12 +23,29 @@ class TimeHandler extends React.Component {
         console.log("timer set to " + this.state.timerIsPaused);
     }
 
+    tick() {
+        if (!this.state.timerIsPaused && this.state.currentTimeInSeconds > 0) {
+            this.setState(state => ({
+                // reduce number of seconds.. every second
+                currentTimeInSeconds: state.currentTimeInSeconds--
+            }));
+        }
+    }
+
+    componentDidMount() {
+        // update component every second
+        this.interval = setInterval(() => this.tick(), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         return (
             <div>
                 <Timer
-                    startTimeInSeconds={this.state.startTimeInSeconds}
-                    timerIsPaused={this.state.timerIsPaused}
+                    seconds={this.state.currentTimeInSeconds}
                 />
                 <Button
                     variant="primary"
