@@ -9,7 +9,8 @@ class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            startTimeInSeconds: 120,
+            currentTimeInSeconds: 10,
+            startTimeInSeconds: 10,
             timerIsFinished: false,
             timerIsPaused: false,
         };

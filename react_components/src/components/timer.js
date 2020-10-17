@@ -5,12 +5,13 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            seconds: parseInt(props.startTimeInSeconds, 10) || 0
+            seconds: parseInt(props.startTimeInSeconds, 10) || 0,
+            timerIsFinished: false,
         };
     }
 
     tick() {
-        if (!this.props.timerIsPaused) {
+        if (!this.props.timerIsPaused && this.state.seconds > 0) {
             this.setState(state => ({
                 // reduce number of seconds.. every second
                 seconds: state.seconds--
