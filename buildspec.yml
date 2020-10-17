@@ -17,6 +17,9 @@ phases:
         - npm install
   build:
     commands:
+        - ls
+        - cd react_components
+        - ls
         - terraform init
         - npm run build
 artifacts:
