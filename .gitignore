@@ -24,3 +24,10 @@ yarn-error.log*
 
 node_modules
 .vscode
+
+# jetbrains stuff
+./idea
+*.xml
+.idea
+*.iml
+/out
