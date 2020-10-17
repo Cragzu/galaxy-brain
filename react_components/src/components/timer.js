@@ -24,7 +24,7 @@ class Timer extends React.Component {
 }
 
 Timer.propTypes = {
-    seconds: PropTypes.number,
+    seconds: PropTypes.number.isRequired,
 };
 
 Timer.defaultProps = {

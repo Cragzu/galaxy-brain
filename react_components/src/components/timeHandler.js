@@ -9,11 +9,20 @@ class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTimeInSeconds: 30,
-            startTimeInSeconds: 10,
+            currentTimeInSeconds: 10,
+            isWorkTime: true,
+            restTimeInterval: 5,
             timerIsFinished: false,
             timerIsPaused: false,
+            workTimeInterval: 15,
         };
+    }
+
+    resetTimer() {
+        this.setState(state => ({
+            currentTimeInSeconds: (state.isWorkTime ? state.restTimeInterval : state.workTimeInterval),
+            isWorkTime: !state.isWorkTime
+        }));
     }
 
     toggleTimerPause() {
@@ -24,11 +33,12 @@ class TimeHandler extends React.Component {
     }
 
     tick() {
-        if (!this.state.timerIsPaused && this.state.currentTimeInSeconds > 0) {
+        if (!this.state.timerIsPaused) {
             this.setState(state => ({
                 // reduce number of seconds.. every second
                 currentTimeInSeconds: state.currentTimeInSeconds--
             }));
+            if (this.state.currentTimeInSeconds === 0) {this.resetTimer()}
         }
     }
 
