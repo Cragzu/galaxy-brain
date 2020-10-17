@@ -10,13 +10,16 @@ class Timer extends React.Component {
     }
 
     tick() {
-        this.setState(state => ({
-            seconds: state.seconds --
-        }));
+        if (!this.props.timerIsPaused) {
+            this.setState(state => ({
+                // reduce number of seconds.. every second
+                seconds: state.seconds--
+            }));
+        }
     }
 
     componentDidMount() {
-        // update every second
+        // update component every second
         this.interval = setInterval(() => this.tick(), 1000);
     }
 
@@ -25,19 +28,20 @@ class Timer extends React.Component {
     }
 
     formatTime(secs) {
-        let hours   = Math.floor(secs / 3600);
+        let hours = Math.floor(secs / 3600);
         let minutes = Math.floor(secs / 60) % 60;
         let seconds = secs % 60;
         return [hours, minutes, seconds]
             .map(v => ('' + v).padStart(2, '0'))
-            .filter((v,i) => v !== '00' || i > 0)
+            .filter((v, i) => v !== '00' || i > 0)
             .join(':');
     }
 
     render() {
         return (
             <div>
-                Timer: {this.formatTime(this.state.seconds)}
+                {this.formatTime(this.state.seconds)}
+                <p>Time remaining</p>
             </div>
         );
     }
@@ -45,10 +49,12 @@ class Timer extends React.Component {
 
 Timer.propTypes = {
     startTimeInSeconds: PropTypes.number,
+    timerIsPaused: PropTypes.bool,
 };
 
 Timer.defaultProps = {
     startTimeInSeconds: 60,
+    timerIsPaused: false,
 };
 
 export default Timer;

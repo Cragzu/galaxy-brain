@@ -8,7 +8,8 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Timer
-                    startTimeInSeconds={5000}
+                    startTimeInSeconds={120}
+                    timerIsPaused={false}
                 />
             </header>
         </div>
