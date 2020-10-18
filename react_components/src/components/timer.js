@@ -20,10 +20,8 @@ class Timer extends React.Component {
         return (
             <Card
                 className="Timer"
-                bg="secondary"
             >
                 <Card.Title className="Clock">{this.formatTime(this.props.seconds)}</Card.Title>
-
                 <Card.Text>Time remaining</Card.Text>
             </Card>
         );

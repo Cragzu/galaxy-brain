@@ -9,6 +9,7 @@ import restTimeAudio from '../assets/soundTimeToRest.mp3'
 import workTimeAudio from '../assets/soundTimeToWork.mp3'
 
 import './timeHandler.css'
+import Card from "react-bootstrap/Card";
 
 class TimeHandler extends React.Component {
     constructor(props) {
@@ -77,13 +78,19 @@ class TimeHandler extends React.Component {
                 <Timer
                     seconds={this.state.currentTimeInSeconds}
                 />
-                <TextDisplay isWorkTime={this.state.isWorkTime}/>
-                <Button
-                    variant="primary"
-                    onClick={(e) => this.toggleTimerPause(e)} // e = click event
+                <Card
+                    className='TextButtonCard'
                 >
-                    {this.state.timerIsPaused ? "Play" : "Pause"}
-                </Button>
+                    <TextDisplay isWorkTime={this.state.isWorkTime}/>
+                    <Button
+                        className = 'PauseButton'
+                        variant={this.state.timerIsPaused ? "success" : "danger"}
+                        onClick={(e) => this.toggleTimerPause(e)} // e = click event
+                    >
+                        {this.state.timerIsPaused ? "Resume" : "Pause"}
+                    </Button>
+                </Card>
+
             </div>
         )
     }

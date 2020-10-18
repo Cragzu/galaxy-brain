@@ -30,7 +30,7 @@ TextDisplay.propTypes = {
 
 // todo: update placeholder text
 TextDisplay.sentences = {
-    restTimeBody: "Time to rest. Get up and stretch, get some water/refill you drink and do whatever you need to do. You're working hard.",
+    restTimeBody: "Time to rest. Get up and stretch, get some water/refill your drink and do whatever you need to do. You're working hard.",
     restTimeTitle: "It's rest time!",
     workTimeBody: "Back to work you go! Take care of yourself! You're doing a great job.",
     workTimeTitle: "It's work time!",
