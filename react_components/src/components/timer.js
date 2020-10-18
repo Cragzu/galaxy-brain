@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from 'react-bootstrap/Card';
+
+import './timer.css';
 
 class Timer extends React.Component {
 
@@ -15,10 +18,14 @@ class Timer extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.formatTime(this.props.seconds)}
-                <p>Time remaining</p>
-            </div>
+            <Card
+                className="Timer"
+                bg="secondary"
+            >
+                <Card.Title className="Clock">{this.formatTime(this.props.seconds)}</Card.Title>
+
+                <Card.Text>Time remaining</Card.Text>
+            </Card>
         );
     }
 }

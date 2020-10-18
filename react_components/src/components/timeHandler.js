@@ -8,6 +8,8 @@ import TextDisplay from './textDisplay';
 import restTimeAudio from '../assets/soundTimeToRest.mp3'
 import workTimeAudio from '../assets/soundTimeToWork.mp3'
 
+import './timeHandler.css'
+
 class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +31,7 @@ class TimeHandler extends React.Component {
     }
 
     resetTimer() {
-        this.playSound(); // todo: comment this out if u get annoyed while working
+        // this.playSound(); // todo: comment this out if u get annoyed while working
         this.setState(state => ({
             currentTimeInSeconds: (state.isWorkTime ? state.restTimeInterval : state.workTimeInterval),
             isWorkTime: !state.isWorkTime
@@ -39,7 +41,7 @@ class TimeHandler extends React.Component {
    tickDownTimer() {
   console.log("cdmount is being run");
         if (!this.state.timerIsPaused) {
-            console.log("in here")
+            console.log("in here");
             this.setState(state => ({
                 // reduce number of seconds.. every second
                 currentTimeInSeconds: state.currentTimeInSeconds--
@@ -71,7 +73,7 @@ class TimeHandler extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='TimeHandler'>
                 <Timer
                     seconds={this.state.currentTimeInSeconds}
                 />

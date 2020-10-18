@@ -1,0 +1,10 @@
+.Timer {
+    padding: 2vmin;
+    margin: 2vmin;
+    width: 50%;
+    font-size: 4vmin;
+}
+
+.Clock {
+    font-size: 8vmin;
+}
