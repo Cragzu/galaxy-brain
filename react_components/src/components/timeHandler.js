@@ -34,6 +34,7 @@ class TimeHandler extends React.Component {
     }
 
     tick() {
+        console.log("cdmount is being run");
         if (!this.state.timerIsPaused) {
             this.setState(state => ({
                 // reduce number of seconds.. every second
@@ -46,7 +47,8 @@ class TimeHandler extends React.Component {
     componentDidMount() {
         // update component every second
         this.interval = setInterval(() => this.tick(), 1000);
-        console.log(this.interval);
+        //console.log(this.interval);
+        console.log("cdmount is being run");
     }
 
     componentWillUnmount() {
