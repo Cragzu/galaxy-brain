@@ -2,10 +2,15 @@
     padding: 2vmin;
     margin: 2vmin;
     width: 50%;
+    height: 40vmin;
     font-size: 4vmin;
     background-color: #431E52;
 }
 
 .Clock {
+    font-size: 16vmin;
+}
+
+.TimeRemaining {
     font-size: 8vmin;
 }

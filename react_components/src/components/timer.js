@@ -22,7 +22,7 @@ class Timer extends React.Component {
                 className="Timer"
             >
                 <Card.Title className="Clock">{this.formatTime(this.props.seconds)}</Card.Title>
-                <Card.Text>Time remaining</Card.Text>
+                <Card.Text className="TimeRemaining">Time remaining</Card.Text>
             </Card>
         );
     }
