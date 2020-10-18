@@ -20,6 +20,8 @@ class TextDisplay extends React.Component {
             <Card className='TextDisplay'>
                 <Card.Title className='TitleContainer'>{this.displayTitle(sentences)}</Card.Title>
                 <Card.Body className='BodyContainer'>{this.displayText(sentences)}</Card.Body>
+                <br />
+                 <p>Press the pause button to change your timer!</p>
             </Card>
         );
     }
