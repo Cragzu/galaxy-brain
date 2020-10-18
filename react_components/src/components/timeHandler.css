@@ -1,6 +1,5 @@
 .TimeHandler {
-    /*background-color: cyan;*/
-    color: white;
+    color: #CDCCCB;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,15 +9,14 @@
 }
 
 .TextButtonCard {
-    background-color: #CDCCCB;
+    background-color: #565554;
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2vmin;
     margin: 4vmin;
-    width: 80%;
-    height: 80%;
+    width: 90%;
 }
 
 .PauseButton {

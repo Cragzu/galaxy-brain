@@ -4,6 +4,8 @@
 
 .App-header {
   background-color: #170A1C;
+  background-image: url('assets/imgStarryBackground.png');
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

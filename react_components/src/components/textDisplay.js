@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from "react-bootstrap/Card";
+
+import './textDisplay.css'
 
 class TextDisplay extends React.Component {
 
-    // todo: styling/css
     displayTitle(sentences) {
         return (this.props.isWorkTime ? sentences.workTimeTitle : sentences.restTimeTitle);
     }
@@ -15,11 +17,10 @@ class TextDisplay extends React.Component {
     render() {
         const sentences = TextDisplay.sentences;
         return (
-            <div>
-                {this.displayTitle(sentences)}
-                <br />
-                {this.displayText(sentences)}
-            </div>
+            <Card className='TextDisplay'>
+                <Card.Title className='TitleContainer'>{this.displayTitle(sentences)}</Card.Title>
+                <Card.Body className='BodyContainer'>{this.displayText(sentences)}</Card.Body>
+            </Card>
         );
     }
 }
@@ -28,7 +29,6 @@ TextDisplay.propTypes = {
     isWorkTime: PropTypes.bool.isRequired,
 };
 
-// todo: update placeholder text
 TextDisplay.sentences = {
     restTimeBody: "Time to rest. Get up and stretch, get some water/refill your drink and do whatever you need to do. You're working hard.",
     restTimeTitle: "It's rest time!",
