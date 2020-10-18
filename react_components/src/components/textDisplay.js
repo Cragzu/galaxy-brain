@@ -20,8 +20,7 @@ class TextDisplay extends React.Component {
             <Card className='TextDisplay'>
                 <Card.Title className='TitleContainer'>{this.displayTitle(sentences)}</Card.Title>
                 <Card.Body className='BodyContainer'>{this.displayText(sentences)}</Card.Body>
-                <br />
-                 <p>Press the pause button to change your timer!</p>
+                <Card.Body className='BodyContainer'>{sentences.pressPause}</Card.Body>
             </Card>
         );
     }
@@ -32,6 +31,7 @@ TextDisplay.propTypes = {
 };
 
 TextDisplay.sentences = {
+    pressPause: "Press the pause button to change your timer!",
     restTimeBody: "Time to rest. Get up and stretch, get some water/refill your drink and do whatever you need to do. You're working hard.",
     restTimeTitle: "It's rest time!",
     workTimeBody: "Back to work you go! Take care of yourself! You're doing a great job.",

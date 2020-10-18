@@ -1,0 +1,13 @@
+.TimeSelector {
+    background-color: #c8cbcf;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    padding: 1vmin;
+}
+
+.TimeInterval {
+    margin: 2vmin;
+}

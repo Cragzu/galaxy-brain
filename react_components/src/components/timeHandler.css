@@ -23,7 +23,16 @@
 .PauseButton {
     padding: 2vmin;
     margin: 2vmin;
-    width: 30%;
+    width: 30vmin;
     font-size: 4vmin;
     border-radius: 3em;
+}
+
+.ButtonPickerContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    padding: 1vmin;
 }

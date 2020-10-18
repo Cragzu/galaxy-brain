@@ -16,12 +16,12 @@ class TimeHandler extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTimeInSeconds: 10,
+            currentTimeInSeconds: 15 * 60,
             isWorkTime: true,
-            restTimeInterval: 5,
+            restTimeInterval: 5 * 60,
             timerIsFinished: false,
             timerIsPaused: false,
-            workTimeInterval: 15,
+            workTimeInterval: 15 * 60,
         };
     }
 
@@ -35,7 +35,7 @@ class TimeHandler extends React.Component {
   }
 
   resetTimer() {
-    //this.playSound(); // todo: comment this out if u get annoyed while working
+    this.playSound(); // todo: comment this out if u get annoyed while working
     let formerState = this.state;
     this.setState((state) => ({
       currentTimeInSeconds: formerState.isWorkTime
@@ -87,14 +87,16 @@ class TimeHandler extends React.Component {
                     className='TextButtonCard'
                 >
                     <TextDisplay isWorkTime={this.state.isWorkTime}/>
-                    <Button
-                        className = 'PauseButton'
-                        variant={this.state.timerIsPaused ? "success" : "danger"}
-                        onClick={(e) => this.toggleTimerPause(e)} // e = click event
-                    >
-                        {this.state.timerIsPaused ? "Resume" : "Pause"}
-                    </Button>
-                    <TimeSelector/>
+                    <div className='ButtonPickerContainer'>
+                        <Button
+                            className = 'PauseButton'
+                            variant={this.state.timerIsPaused ? "success" : "danger"}
+                            onClick={(e) => this.toggleTimerPause(e)} // e = click event
+                        >
+                            {this.state.timerIsPaused ? "Resume" : "Pause"}
+                        </Button>
+                        <TimeSelector/>
+                    </div>
                 </Card>
             </div>
         )
