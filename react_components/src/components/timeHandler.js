@@ -9,18 +9,21 @@ import restTimeAudio from "../assets/soundTimeToRest.mp3";
 import workTimeAudio from "../assets/soundTimeToWork.mp3";
 import TimeSelector from "./timeSelector";
 
+import './timeHandler.css'
+import Card from "react-bootstrap/Card";
+
 class TimeHandler extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentTimeInSeconds: 10,
-      isWorkTime: true,
-      restTimeInterval: 5,
-      timerIsFinished: false,
-      timerIsPaused: false,
-      workTimeInterval: 15,
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentTimeInSeconds: 10,
+            isWorkTime: true,
+            restTimeInterval: 5,
+            timerIsFinished: false,
+            timerIsPaused: false,
+            workTimeInterval: 15,
+        };
+    }
 
   playSound() {
     const audio = new Audio(
@@ -74,26 +77,30 @@ class TimeHandler extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+    render() {
+        return (
+            <div className='TimeHandler'>
+                <Timer
+                    seconds={this.state.currentTimeInSeconds}
+                />
+                <Card
+                    className='TextButtonCard'
+                >
+                    <TextDisplay isWorkTime={this.state.isWorkTime}/>
+                    <Button
+                        className = 'PauseButton'
+                        variant={this.state.timerIsPaused ? "success" : "danger"}
+                        onClick={(e) => this.toggleTimerPause(e)} // e = click event
+                    >
+                        {this.state.timerIsPaused ? "Resume" : "Pause"}
+                    </Button>
+                </Card>
+                <br />
+                <TimeSelector/>
+            </div>
+        )
+    }
 
-  render() {
-    return (
-      <div>
-        <Timer seconds={this.state.currentTimeInSeconds} />
-        <TextDisplay isWorkTime={this.state.isWorkTime} />
-        <Button
-          variant="primary"
-          onClick={(e) => this.toggleTimerPause(e)} // e = click event
-        >
-          {this.state.timerIsPaused ? "Play" : "Pause"}
-        </Button>
-        <br />
-        <hr />
-
-        
-        <TimeSelector/>
-      </div>
-    );
-  }
 }
 
 export default TimeHandler;

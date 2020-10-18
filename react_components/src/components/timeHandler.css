@@ -1,0 +1,29 @@
+.TimeHandler {
+    color: #CDCCCB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+}
+
+.TextButtonCard {
+    background-color: #565554;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vmin;
+    margin: 4vmin;
+    width: 90%;
+    border-radius: 1em;
+}
+
+.PauseButton {
+    padding: 2vmin;
+    margin: 2vmin;
+    width: 30%;
+    font-size: 4vmin;
+    border-radius: 3em;
+}
