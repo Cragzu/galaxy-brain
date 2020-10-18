@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 // components
 import Timer from './timer';
 import TextDisplay from './textDisplay';
+import restTimeAudio from '../assets/soundTimeToRest.mp3'
+import workTimeAudio from '../assets/soundTimeToWork.mp3'
 
 class TimeHandler extends React.Component {
     constructor(props) {
@@ -19,11 +21,31 @@ class TimeHandler extends React.Component {
         };
     }
 
+    playSound() {
+        const audio = new Audio(this.state.isWorkTime ? workTimeAudio : restTimeAudio) ;
+
+        console.log('Playing audio');
+        audio.play();
+    }
+
     resetTimer() {
+        this.playSound(); // todo: comment this out if u get annoyed while working
         this.setState(state => ({
             currentTimeInSeconds: (state.isWorkTime ? state.restTimeInterval : state.workTimeInterval),
             isWorkTime: !state.isWorkTime
         }));
+    }
+
+    tickDownTimer() {
+        if (!this.state.timerIsPaused) {
+            this.setState(state => ({
+                // reduce number of seconds.. every second
+                currentTimeInSeconds: state.currentTimeInSeconds--
+            }));
+            if (this.state.currentTimeInSeconds === 0) {
+                this.resetTimer()
+            }
+        }
     }
 
     toggleTimerPause() {
@@ -33,19 +55,9 @@ class TimeHandler extends React.Component {
         console.log("timer set to " + this.state.timerIsPaused);
     }
 
-    tick() {
-        if (!this.state.timerIsPaused) {
-            this.setState(state => ({
-                // reduce number of seconds.. every second
-                currentTimeInSeconds: state.currentTimeInSeconds--
-            }));
-            if (this.state.currentTimeInSeconds === 0) {this.resetTimer()}
-        }
-    }
-
     componentDidMount() {
         // update component every second
-        this.interval = setInterval(() => this.tick(), 1000);
+        this.interval = setInterval(() => this.tickDownTimer(), 1000);
     }
 
     componentWillUnmount() {

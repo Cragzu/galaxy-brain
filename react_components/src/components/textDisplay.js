@@ -24,7 +24,7 @@ class TextDisplay extends React.Component {
 }
 
 TextDisplay.propTypes = {
-    isWorkTime: PropTypes.string.isRequired,
+    isWorkTime: PropTypes.bool.isRequired,
 };
 
 // todo: update placeholder text
