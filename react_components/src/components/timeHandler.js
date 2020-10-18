@@ -94,9 +94,8 @@ class TimeHandler extends React.Component {
                     >
                         {this.state.timerIsPaused ? "Resume" : "Pause"}
                     </Button>
+                    <TimeSelector/>
                 </Card>
-                <br />
-                <TimeSelector/>
             </div>
         )
     }
