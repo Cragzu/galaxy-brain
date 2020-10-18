@@ -19,9 +19,8 @@ phases:
     commands:
         - ls
         - terraform init
-        - npm run build
         - ls
 artifacts:
   files:
     - '**/*'
-  base-directory: 'react_components/build'
+  base-directory: 'react_components'
