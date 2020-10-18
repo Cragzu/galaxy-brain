@@ -31,7 +31,7 @@ class TimeHandler extends React.Component {
   }
 
   resetTimer() {
-    //this.playSound(); // todo: comment this out if u get annoyed while working
+    this.playSound(); // todo: comment this out if u get annoyed while working
     let formerState = this.state;
     this.setState((state) => ({
       currentTimeInSeconds: formerState.isWorkTime
