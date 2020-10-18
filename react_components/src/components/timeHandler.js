@@ -65,6 +65,32 @@ class TimeHandler extends React.Component {
     console.log("timer set to " + this.state.timerIsPaused);
   }
 
+  timeConversion = (timeString) => {
+    const timeArray = timeString.split(":");
+    console.log(timeArray);
+    let seconds = 0;
+    const hours = parseInt(timeArray[0]) * 3600;
+    const minutes = parseInt(timeArray[1]) * 60;
+
+    if (timeArray[2]) {
+        seconds = parseInt(timeArray[2]);
+    }
+
+    console.log(hours, minutes, seconds);
+
+    return hours + minutes + seconds;
+};
+
+handleWorkTimeChange = (e) => {
+    const time = this.timeConversion(e.target.value);
+    this.setState({workTimeInterval: time});
+};
+
+handleRestTimeChange = (e) => {
+    const time = this.timeConversion(e.target.value);
+    this.setState({restTimeInterval: time});
+};
+
   componentDidMount() {
     // update component every second
     this.interval = setInterval(() => this.tickDownTimer(), 1000);
@@ -95,7 +121,7 @@ class TimeHandler extends React.Component {
                         >
                             {this.state.timerIsPaused ? "Resume" : "Pause"}
                         </Button>
-                        <TimeSelector/>
+                        <TimeSelector handleWorkTimeChange={this.handleWorkTimeChange} handleRestTimeChange={this.handleRestTimeChange}/>
                     </div>
                 </Card>
             </div>

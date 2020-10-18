@@ -13,32 +13,6 @@ class TimeSelector extends React.Component {
         };
     }
 
-    timeConversion = (timeString) => {
-        const timeArray = timeString.split(":");
-        console.log(timeArray);
-        let seconds = 0;
-        const hours = parseInt(timeArray[0]) * 3600;
-        const minutes = parseInt(timeArray[1]) * 60;
-
-        if (timeArray[2]) {
-            seconds = parseInt(timeArray[2]);
-        }
-
-        console.log(hours, minutes, seconds);
-
-        return hours + minutes + seconds;
-    };
-
-    handleWorkTimeChange = (e) => {
-        const time = this.timeConversion(e.target.value);
-        this.setState({workTime: time});
-    };
-
-    handleRestTimeChange = (e) => {
-        const time = this.timeConversion(e.target.value);
-        this.setState({restTime: time});
-    };
-
     workTimeInterval = () => {
         return (
             <div className="TimeInterval">
@@ -46,7 +20,7 @@ class TimeSelector extends React.Component {
                     <InputLabel>Work Time Input</InputLabel>
                     <TextField
                         type="time"
-                        onChange={this.handleWorkTimeChange}
+                        onChange={this.props.handleWorkTimeChange}
                         defaultValue="00:15:00"
                         inputProps={{
                             step: 100,
@@ -64,8 +38,8 @@ class TimeSelector extends React.Component {
                     <InputLabel>Rest Time Input</InputLabel>
                     <TextField
                         type="time"
-                        onChange={this.handleRestTimeChange}
-                        defaultValue="00:15:00"
+                        onChange={this.props.handleRestTimeChange}
+                        defaultValue="00:05:00"
                         inputProps={{
                             step: 100,
                         }}
