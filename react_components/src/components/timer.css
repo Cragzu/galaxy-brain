@@ -5,6 +5,7 @@
     height: 40vmin;
     font-size: 4vmin;
     background-color: #431E52;
+    border-radius: 1em;
 }
 
 .Clock {

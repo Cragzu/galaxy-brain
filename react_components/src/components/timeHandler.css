@@ -17,6 +17,7 @@
     padding: 2vmin;
     margin: 4vmin;
     width: 90%;
+    border-radius: 1em;
 }
 
 .PauseButton {
@@ -24,4 +25,5 @@
     margin: 2vmin;
     width: 30%;
     font-size: 4vmin;
+    border-radius: 3em;
 }

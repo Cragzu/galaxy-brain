@@ -4,10 +4,10 @@
     flex-direction: column;
     width: 100%;
     text-align: center;
+    border-radius: 1em;
 }
 
 .TitleContainer {
-
     padding: 2vmin;
     margin: 2vmin 2vmin 0 2vmin;
     font-size: 5vmin;
