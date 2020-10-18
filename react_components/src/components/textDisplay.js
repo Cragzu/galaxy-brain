@@ -19,6 +19,8 @@ class TextDisplay extends React.Component {
                 {this.displayTitle(sentences)}
                 <br />
                 {this.displayText(sentences)}
+                <br />
+                <p>Press the pause button to change your timer!</p>
             </div>
         );
     }

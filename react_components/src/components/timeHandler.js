@@ -7,6 +7,7 @@ import Timer from "./timer";
 import TextDisplay from "./textDisplay";
 import restTimeAudio from "../assets/soundTimeToRest.mp3";
 import workTimeAudio from "../assets/soundTimeToWork.mp3";
+import TimeSelector from "./timeSelector";
 
 class TimeHandler extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class TimeHandler extends React.Component {
   }
 
   resetTimer() {
-    this.playSound(); // todo: comment this out if u get annoyed while working
+    //this.playSound(); // todo: comment this out if u get annoyed while working
     let formerState = this.state;
     this.setState((state) => ({
       currentTimeInSeconds: formerState.isWorkTime
@@ -85,6 +86,11 @@ class TimeHandler extends React.Component {
         >
           {this.state.timerIsPaused ? "Play" : "Pause"}
         </Button>
+        <br />
+        <hr />
+
+        
+        <TimeSelector/>
       </div>
     );
   }
