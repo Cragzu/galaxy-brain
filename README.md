@@ -5,7 +5,7 @@ We believe that your best work is done when you're feeling healthy and relaxed. 
 
 Our prototype includes a pause/resume button to stop the timer if need be, a time selector for picking how long you'd like your focus and rest periods to last, and ping sounds that play to alert you when the time is up.
 
-We learned a lot building this project, and are excited to bring it to you! Stay safe out there <3
+We learned a lot building this project, and are excited to bring it to you! Stay safe out there :heart:
 
 ## Try it out!
 [Open our app here!](http://galaxy-brain-dubhacks.s3-website-us-east-1.amazonaws.com/)
@@ -34,4 +34,4 @@ Components from [React Bootstrap](https://react-bootstrap.github.io/) and [Mater
 
 [Art assets we used](http://clipart-library.com/clip-art/transparent-stars-background-13.htm)
 
-Thanks to the organizers and mentors at DubHacks 2020!
+Thanks to the organizers and mentors at DubHacks 2020! :rocket:
