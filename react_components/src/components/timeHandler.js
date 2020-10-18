@@ -42,15 +42,12 @@ class TimeHandler extends React.Component {
   }
 
   tickDownTimer() {
-   // console.log("cdmount is being run");
     if (!this.state.timerIsPaused) {
-      //console.log("in here");
       let formerState = this.state.currentTimeInSeconds - 1;
       this.setState({
         // reduce number of seconds.. every second
         currentTimeInSeconds: formerState,
       });
-      console.log(this.state);
       if (this.state.currentTimeInSeconds === 0) {
         this.resetTimer();
       }
