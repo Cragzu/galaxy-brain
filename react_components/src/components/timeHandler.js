@@ -22,7 +22,7 @@ class TimeHandler extends React.Component {
     }
 
     playSound() {
-        const audio = new Audio(this.state.isWorkTime ? workTimeAudio : restTimeAudio) ;
+        const audio = new Audio(this.state.isWorkTime ? workTimeAudio : restTimeAudio);
 
         console.log('Playing audio');
         audio.play();
@@ -42,14 +42,6 @@ class TimeHandler extends React.Component {
                 // reduce number of seconds.. every second
                 currentTimeInSeconds: state.currentTimeInSeconds--
             }));
-            if (this.state.currentTimeInSeconds === 0) {this.resetTimer()}
-        }
-    }
-
-    componentDidMount() {
-        // update component every second
-        this.interval = setInterval(() => this.tick(), 1000);
-        console.log(this.interval);
             if (this.state.currentTimeInSeconds === 0) {
                 this.resetTimer()
             }
@@ -66,6 +58,10 @@ class TimeHandler extends React.Component {
     componentDidMount() {
         // update component every second
         this.interval = setInterval(() => this.tickDownTimer(), 1000);
+        console.log(this.interval);
+        if (this.state.currentTimeInSeconds === 0) {
+            this.resetTimer()
+        }
     }
 
     componentWillUnmount() {
@@ -86,7 +82,6 @@ class TimeHandler extends React.Component {
                     {this.state.timerIsPaused ? "Play" : "Pause"}
                 </Button>
             </div>
-
         )
     }
 }
